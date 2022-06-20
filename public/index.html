@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--script defer src="https://pyscript.net/alpha/pyscript.js"></script-->
+    <!--py-env>
+        - numpy
+        - pandas
+        - librosa
+        - seaborn
+        - matplotlib
+        - sklearn
+        - ipython
+        - keras
+    </py-env-->
+    <title>Notarization Service</title>
+
+</head>
+
+<body class="p-3 mb-2 bg-dark text-white">
+    <!--py-script src="./speech_analysis.py"></!--py-script-->
+    <div class="introduction">
+        <h1>유서공증 서비스</h1>
+    </div>
+
+    <form action="/docs" method="post">
+        <button class="btn btn-primary" style="margin-bottom: 10px;">유언장 작성</button>
+    </form>
+
+    <div class="functions">
+        <form action="/image" method="post" enctype="multipart/form-data">
+            <p>
+                <label for="images"><strong>image</strong></label>
+                <input type="file" id="images" name="image" class="btn btn-primary"/>
+                <button type="submit" class="btn btn-primary">ipfs-upload</button>
+            </p>
+        </form>        
+        <form action="/voice" method="post" enctype="multipart/form-data">
+            <p>
+                <label for="voice"><strong>voice</strong></label>
+                <input type="file" id="voices" name="voice" class="btn btn-primary"/>
+                <button type="submit" class="btn btn-primary">ipfs-upload</button>
+            </p>
+        </form>
+
+        <input type=checkbox id="chk-hear-mic"><label for="chk-hear-mic">마이크 소리 듣기</label>
+        <button id="record">녹음</button>
+        <button id="stop">정지</button>
+        <div id="sound-clips"></div>
+    </div>
+
+    <script>
+        const record = document.getElementById("record")
+        const stop = document.getElementById("stop")
+        const soundClips = document.getElementById("sound-clips")
+        const chkHearMic = document.getElementById("chk-hear-mic")
+
+        const audioCtx = new(window.AudioContext || window.webkitAudioContext)() // 오디오 컨텍스트 정의
+
+        const analyser = audioCtx.createAnalyser()
+        function makeSound(stream) {
+            const source = audioCtx.createMediaStreamSource(stream)
+            source.connect(analyser)
+            analyser.connect(audioCtx.destination)
+
+        }
+
+        if (navigator.mediaDevices) {
+            console.log('getUserMedia supported.')
+
+            const constraints = {
+                audio: true
+            }
+            let chunks = []
+
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(stream => {
+
+                    const mediaRecorder = new MediaRecorder(stream)
+                    
+                    chkHearMic.onchange = e => {
+                        if(e.target.checked == true) {
+                            audioCtx.resume()
+                            makeSound(stream)
+                        } else {
+                            audioCtx.suspend()
+                        }
+                    }
+                    
+                    record.onclick = () => {
+                        mediaRecorder.start()
+                        console.log(mediaRecorder.state)
+                        console.log("recorder started")
+                        record.style.background = "red"
+                        record.style.color = "black"
+                    }
+
+                    stop.onclick = () => {
+                        mediaRecorder.stop()
+                        console.log(mediaRecorder.state)
+                        console.log("recorder stopped")
+                        record.style.background = ""
+                        record.style.color = ""
+                    }
+
+                    mediaRecorder.onstop = e => {
+                        console.log("data available after MediaRecorder.stop() called.")
+
+                        const clipName = prompt("오디오 파일 제목을 입력하세요.", new Date())
+
+                        const clipContainer = document.createElement('article')
+                        const clipLabel = document.createElement('p')
+                        const audio = document.createElement('audio')
+                        const deleteButton = document.createElement('button')
+                        const storeText = document.createElement('a')
+
+                        clipContainer.classList.add('clip')
+                        audio.setAttribute('controls', '')
+                        deleteButton.innerHTML = "삭제"
+                        storeText.innerHTML = "저장"
+                        clipLabel.innerHTML = clipName
+
+                        clipContainer.appendChild(audio)
+                        clipContainer.appendChild(clipLabel)
+                        clipContainer.appendChild(deleteButton)
+                        clipContainer.appendChild(storeText)
+                        soundClips.appendChild(clipContainer)
+
+                        audio.controls = true
+                        const blob = new Blob(chunks, {
+                            'type': 'audio/ogg codecs=opus'
+                        })
+                        chunks = []
+                        const audioURL = URL.createObjectURL(blob)
+                        audio.src = audioURL
+
+                        storeText.href = audioURL; // 위에서 생성한 Blob URL 설정
+                        storeText.download = "test.mp3"; // 다운로드 받을 파일명 설정
+
+                        console.log("recorder stopped")
+
+                        deleteButton.onclick = e => {
+                            evtTgt = e.target
+                            evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode)
+                        }
+
+                    }
+
+                    mediaRecorder.ondataavailable = e => {
+                        chunks.push(e.data)
+                    }
+                })
+                .catch(err => {
+                    console.log('The following error occurred: ' + err)
+                })
+        }
+    </script>
+</body>
+</html>
+

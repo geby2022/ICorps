@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--<script src="jquery-3.6.0.min.js"></script> jquery 불러오기-->
+    <script src="js/receive_data.js"></script>
+    <!--내가 새로 만든 컨트랙트를 파일로 만들기 위한 javascript 파일이다. 연결시켜준다. -->
+    <!--서명 플러그인-->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/signature_pad.min.js"></script>
+    <!-- <script src="js/alchemyWeb3.min.js"></script> -->
+    <!-- Minified -->
+    <script src="https://cdn.jsdelivr.net/npm/@alch/alchemy-web3@latest/dist/alchemyWeb3.min.js"></script>
+    <!--<script src="/app/CreatedContract.html"></script>-->
+    <!-- css 파일에서 레이아웃을 불러옴."../contract/layout.css"-->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <!--스타일 시트로 이 문서를 부르겠다. text/css는 확장자-->
+    <!--<script type="text/javascript" src="/Scripts/mon/lib/jkmon/mon.pc.min.js?202105282"></script> -->>
+    <style>
+        #signature {
+            border: 1px solid rgb(255, 255, 255);
+        }
+        #save,
+        #clear {
+            padding: 5px 20px;
+            border: 0;
+            color: #fff;
+            background: #000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></scrip> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script> -->
+    <!-- <script src="js/mint-nft.js"></script> -->
+
+
+    <div id="header">
+        <div id="gnb">
+            <h1>
+                <!-- 최상단 알바몬 로고, 카테고리가 나오게끔 해주는 코드
+            <a href="/"><img src="https://contents.albamon.kr/monimg/gnb/bi/h_logo.png" class="png" width="160" height="32" alt="알바몬" /></a>
+            
+            <a href="/Contract"><span>유언장</span></a>
+            -->
+            </h1>
+        </div>
+    </div>
+
+
+
+    <div id="accessibility">
+        <!--div는 구획을 나눔 -->
+        <p><a href="#container">컨텐츠 바로가기</a></p>
+        <!--href는 클릭효과를 주기 위함 -->
+    </div>
+
+
+    <div id="wrap">
+        <div id="container">
+            <a name="asMainWrap"></a>
+            <div id="content">
+                <h2 class="skip"></h2>
+                <div class="monContract">
+                    <div class="btnBx">
+                        <button type="button" class="btnOff" id='connect_wallets'>지갑 연동하기</button>
+                        <button type="button" class="btnOff" id='mint_NFT'>민팅하기</button>
+                    </div>
+                    <div class="flowBx">
+                        <ol>
+                            <!-- 유언장 : 표준 유언장  // 상단 유형선택, 장 작성 탭, 작성완료 탭.. ol, li는 순서가 있는 목록 태그 (ordered list) 
+                        <li><span>1</span>유형선택</li>
+                        <li><strong><span>2</span>장 작성</strong></li>
+                        <li><span>3</span>작성완료</li>
+                        -->
+                            <li><strong>유 언 장 </strong></li>
+                        </ol>
+                    </div>
+
+
+                    <form action="/Contract/ft1/wt2/regist" method="post">
+                        <style type="text/css">
+                            input.tBox {
+                                width: 480px;
+                            }
+                        </style>
+                        <div class="ctBx">
+                            <div class="writeForm">
+                                <!-- 유언장 1차 개편 -->
+                                <div class="writeWrp">
+
+                                    <!--// 필수항목 -->
+                                    <span class="cmtMark"><span class="mark">(*필수)</span> *는 반드시 기재되어야 합니다.</span>
+                                    <h3 class="articleTit"><strong>필수항목 입력</strong></h3>
+                                    <!-- [개발] 타이틀  : 유언자 작성시에만 노출 -->
+                                    <table class="tbWrite" summary="이 테이블에는 표준유언장 유언자 정보 항목이 포함되어 있습니다.">
+                                        <caption><span class="skip">표준 유언장</span></caption>
+                                        <tbody>
+                                            <tr>
+                                                <th>유언자&nbsp;이름<span class="mark">필수</span></th>
+                                                <td>
+                                                    <input class="tBox" dev-max-length="30"
+                                                        id="EmployeeModel_EmployeeName"
+                                                        name="EmployeeModel.EmployeeName"
+                                                        placeholder="(*필수) 유언자 이름을 적어주세요" title="유언자명 입력" type="text"
+                                                        value="" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>유언자&nbsp;주소<span class="mark">필수</span></th>
+                                                <td>
+                                                    <input class="tBox" dev-max-length="50"
+                                                        id="EmployeeModel_EmployeeAddress"
+                                                        name="EmployeeModel.EmployeeAddress"
+                                                        placeholder="(*필수) 유언자 거주 주소를 적어주세요" title="(유언자)주소 입력"
+                                                        type="text" value="" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>유언자&nbsp;연락처<span class="mark">필수</span></th>
+                                                <td>
+                                                    <input class="tBox" data-display="phone" dev-max-length="12"
+                                                        id="EmployeeModel_EmployeeContactUs"
+                                                        name="EmployeeModel.EmployeeContactUs"
+                                                        placeholder="(*필수) 유언자 연락처를 적어주세요" title="연락처 입력" type="text"
+                                                        value="" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>유언자&nbsp;서명<span class="mark">필수</span></th>
+                                                <td>
+                                                    <div class="signPad" id="EmployeeModel.EmployeeSign" title="유언자 서명">
+                                                        <canvas id="signature" width="525" height="170"></canvas>
+                                                    </div>
+                                                    <span class="cmt" id="sign_placeholder"> (*필수) 위에 서명해주세요</span>
+                                                    <button type="button" class="btnReset" id="reset_sign">초기화</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>수증자(피상속자) 이름<span class="mark">필수</span></th>
+                                                <td>
+                                                    <input class="tBox" dev-max-length="30" id="BossModel_CompanyName"
+                                                        name="BossModel.CompanyName"
+                                                        placeholder="(*필수) 수증자(피상속자) 이름을 적어주세요." style="width:480px;"
+                                                        title="수증자(피상속자)명" type="text" value="" />
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>수증자 지갑주소<span class="mark">필수</span></th>
+                                                <td>
+                                                    <input class="tBox" dev-max-length="30" id="BossModel_CompanyName"
+                                                        name="BossModel.CompanyName"
+                                                        placeholder="(*필수) 수증자의 암호화폐지갑주소인 public key를 기입해주세요."
+                                                        style="width:480px;" title="수증자(피상속자)명" type="text" value="" />
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                    <h3 class="articleTit articleTit_2">선택항목 입력</h3>
+
+
+                                    <!--// 필수항목 -->
+                                    <table class="tbWrite" summary="이 테이블에는 표준유언장 유언자 정보 항목이 포함되어 있습니다.">
+                                        <caption><span class="skip">표준 유언장</span></caption>
+                                        <tbody>
+                                            <tr>
+                                                <th>효력발생기간 </th>
+                                                <td>
+                                                    <div class="period">
+                                                        <input data-val="true"
+                                                            data-val-date="ContractStartDate 필드는 날짜여야 합니다."
+                                                            id="StandardModel_ContractStartDate"
+                                                            name="StandardModel.ContractStartDate" title=" 시작"
+                                                            type="hidden" value="" />
+                                                        <input data-val="true"
+                                                            data-val-date="ContractEndDate 필드는 날짜여야 합니다."
+                                                            id="StandardModel_ContractEndDate"
+                                                            name="StandardModel.ContractEndDate" title=" 종료"
+                                                            type="hidden" value="" />
+
+                                                        <select class="selYear"
+                                                            data-name="StandardModel.ContractStartDate" data-val="true"
+                                                            data-val-number="Year 필드는 숫자여야 합니다."
+                                                            data-val-required="Year 필드가 필요합니다."
+                                                            id="StandardModel_ContractStartDate_Value_Year"
+                                                            name="StandardModel.ContractStartDate.Value.Year"
+                                                            title=" 시작 년">
+                                                            <option value="">년</option>
+                                                            <option value="2020">2020년</option>
+                                                            <option selected="selected" value="2021">2021년</option>
+                                                            <option value="2022">2022년</option>
+                                                            <option value="2023">2023년</option>
+                                                            <option value="2024">2024년</option>
+                                                        </select>
+                                                        <select class="selDate"
+                                                            data-name="StandardModel.ContractStartDate" data-val="true"
+                                                            data-val-number="Month 필드는 숫자여야 합니다."
+                                                            data-val-required="Month 필드가 필요합니다." id="DevStMonth"
+                                                            name="StandardModel.ContractStartDate.Value.Month"
+                                                            title=" 시작 월">
+                                                            <option value="">월</option>
+                                                            <option value="01">01월</option>
+                                                            <option value="02">02월</option>
+                                                            <option value="03">03월</option>
+                                                            <option value="04">04월</option>
+                                                            <option value="05">05월</option>
+                                                            <option value="06">06월</option>
+                                                            <option value="07">07월</option>
+                                                            <option value="08">08월</option>
+                                                            <option value="09">09월</option>
+                                                            <option value="10">10월</option>
+                                                            <option value="11">11월</option>
+                                                            <option value="12">12월</option>
+                                                        </select>
+                                                        <select class="selDate"
+                                                            data-name="StandardModel.ContractStartDate" data-val="true"
+                                                            data-val-number="Day 필드는 숫자여야 합니다."
+                                                            data-val-required="Day 필드가 필요합니다." id="DevStDay"
+                                                            name="StandardModel.ContractStartDate.Value.Day"
+                                                            title=" 시작 일">
+                                                            <option value="">일</option>
+                                                            <option value="01">01일</option>
+                                                            <option value="02">02일</option>
+                                                            <option value="03">03일</option>
+                                                            <option value="04">04일</option>
+                                                            <option value="05">05일</option>
+                                                            <option value="06">06일</option>
+                                                            <option value="07">07일</option>
+                                                            <option value="08">08일</option>
+                                                            <option value="09">09일</option>
+                                                            <option value="10">10일</option>
+                                                            <option value="11">11일</option>
+                                                            <option value="12">12일</option>
+                                                            <option value="13">13일</option>
+                                                            <option value="14">14일</option>
+                                                            <option value="15">15일</option>
+                                                            <option value="16">16일</option>
+                                                            <option value="17">17일</option>
+                                                            <option value="18">18일</option>
+                                                            <option value="19">19일</option>
+                                                            <option value="20">20일</option>
+                                                            <option value="21">21일</option>
+                                                            <option value="22">22일</option>
+                                                            <option value="23">23일</option>
+                                                            <option value="24">24일</option>
+                                                            <option value="25">25일</option>
+                                                            <option value="26">26일</option>
+                                                            <option value="27">27일</option>
+                                                            <option value="28">28일</option>
+                                                            <option value="29">29일</option>
+                                                            <option value="30">30일</option>
+                                                            <option value="31">31일</option>
+                                                        </select>
+                                                        <span class="hyphen">~</span>
+                                                        <select class="selYear"
+                                                            data-name="StandardModel.ContractEndDate" data-val="true"
+                                                            data-val-number="Year 필드는 숫자여야 합니다."
+                                                            data-val-required="Year 필드가 필요합니다."
+                                                            id="StandardModel_ContractEndDate_Value_Year"
+                                                            name="StandardModel.ContractEndDate.Value.Year"
+                                                            title=" 종료 년">
+                                                            <option value="">년</option>
+                                                            <option value="2020">2020년</option>
+                                                            <option selected="selected" value="2021">2021년</option>
+                                                            <option value="2022">2022년</option>
+                                                            <option value="2023">2023년</option>
+                                                            <option value="2024">2024년</option>
+                                                        </select>
+                                                        <select class="selDate"
+                                                            data-name="StandardModel.ContractEndDate" data-val="true"
+                                                            data-val-number="Month 필드는 숫자여야 합니다."
+                                                            data-val-required="Month 필드가 필요합니다." id="DevEdMonth"
+                                                            name="StandardModel.ContractEndDate.Value.Month"
+                                                            title=" 종료 월">
+                                                            <option value="">월</option>
+                                                            <option value="01">01월</option>
+                                                            <option value="02">02월</option>
+                                                            <option value="03">03월</option>
+                                                            <option value="04">04월</option>
+                                                            <option value="05">05월</option>
+                                                            <option value="06">06월</option>
+                                                            <option value="07">07월</option>
+                                                            <option value="08">08월</option>
+                                                            <option value="09">09월</option>
+                                                            <option value="10">10월</option>
+                                                            <option value="11">11월</option>
+                                                            <option value="12">12월</option>
+                                                        </select>
+                                                        <select class="selDate"
+                                                            data-name="StandardModel.ContractEndDate" data-val="true"
+                                                            data-val-number="Day 필드는 숫자여야 합니다."
+                                                            data-val-required="Day 필드가 필요합니다." id="DevEdDay"
+                                                            name="StandardModel.ContractEndDate.Value.Day"
+                                                            title=" 종료 일">
+                                                            <option value="">일</option>
+                                                            <option value="01">01일</option>
+                                                            <option value="02">02일</option>
+                                                            <option value="03">03일</option>
+                                                            <option value="04">04일</option>
+                                                            <option value="05">05일</option>
+                                                            <option value="06">06일</option>
+                                                            <option value="07">07일</option>
+                                                            <option value="08">08일</option>
+                                                            <option value="09">09일</option>
+                                                            <option value="10">10일</option>
+                                                            <option value="11">11일</option>
+                                                            <option value="12">12일</option>
+                                                            <option value="13">13일</option>
+                                                            <option value="14">14일</option>
+                                                            <option value="15">15일</option>
+                                                            <option value="16">16일</option>
+                                                            <option value="17">17일</option>
+                                                            <option value="18">18일</option>
+                                                            <option value="19">19일</option>
+                                                            <option value="20">20일</option>
+                                                            <option value="21">21일</option>
+                                                            <option value="22">22일</option>
+                                                            <option value="23">23일</option>
+                                                            <option value="24">24일</option>
+                                                            <option value="25">25일</option>
+                                                            <option value="26">26일</option>
+                                                            <option value="27">27일</option>
+                                                            <option value="28">28일</option>
+                                                            <option value="29">29일</option>
+                                                            <option value="30">30일</option>
+                                                            <option value="31">31일</option>
+                                                        </select>
+                                                        <p class="noti">※ 효력발생시점 이후 효력을 영구히 하는 경우 유언개시일만 기재</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>근무장소 </th>
+                                                <td>
+                                                    <input type="text" id="workPlace" name="StandardModel.WorkPlace"
+                                                        dev-max-length="50" class="tBox" style="width:480px;"
+                                                        title="유언 장소" placeholder="근무 장소를 적어주세요.">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>업무의&nbsp;내용 </th>
+                                                <td>
+                                                    <input type="text" id="workContent" name="StandardModel.WorkContent"
+                                                        dev-max-length="50" class="tBox" style="width:480px;"
+                                                        title="업무내용" placeholder="업무내용 및 활동 내역을 적어주세요." />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>유언시간 </th>
+                                                <td>
+                                                    <select id="StandardModel_WorkStartTime"
+                                                        name="StandardModel.WorkStartTime" title="유언 시작시간">
+                                                        <option value="">시작시간</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="hyphen">~</span>
+                                                    <select id="StandardModel_WorkEndTime"
+                                                        name="StandardModel.WorkEndTime" title="유언 종료시간">
+                                                        <option value="">종료시간</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr style="display:none">
+                                                <th>휴게시간 </th>
+                                                <td>
+                                                    <select id="StandardModel_BreakStartTime"
+                                                        name="StandardModel.BreakStartTime" title="휴게 시작시간">
+                                                        <option value="">시작시간</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="hyphen">~</span>
+                                                    <select id="StandardModel_BreakEndTime"
+                                                        name="StandardModel.BreakEndTime" title="휴게 종료시간">
+                                                        <option value="">종료시간</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>근무일 </th>
+                                                <td>
+                                                    <ul class="workDay">
+                                                        <li>
+                                                            <input type="radio" id="lb_workDay_01" value="주1일"
+                                                                name="StandardModel.WeekWorkDateCnt" title="근무일" />
+                                                            <label for="lb_workDay_01">주1일</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_workDay_02" value="주2일"
+                                                                name="StandardModel.WeekWorkDateCnt" />
+                                                            <label for="lb_workDay_02">주2일</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_workDay_03" value="주3일"
+                                                                name="StandardModel.WeekWorkDateCnt" />
+                                                            <label for="lb_workDay_03">주3일</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_workDay_04" value="주4일"
+                                                                name="StandardModel.WeekWorkDateCnt" />
+                                                            <label for="lb_workDay_04">주4일</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_workDay_05" value="주5일"
+                                                                name="StandardModel.WeekWorkDateCnt" />
+                                                            <label for="lb_workDay_05">주5일</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_workDay_06" value="주6일"
+                                                                name="StandardModel.WeekWorkDateCnt" />
+                                                            <label for="lb_workDay_06">주6일</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_workDay_07" value="매일"
+                                                                name="StandardModel.WeekWorkDateCnt" />
+                                                            <label for="lb_workDay_07">매일</label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr style="" data-cnt="0">
+                                                <th>
+                                                    휴일 </th>
+                                                <td>
+                                                    <div class="holiday">
+                                                        <input id="StandardModel_WeekHoliday"
+                                                            name="StandardModel.WeekHoliday" title="휴일" type="hidden"
+                                                            value="" />
+                                                        <p class="dayTx">
+                                                            매주 <em></em>요일
+
+                                                            <span class="cmt">아래 요일을 체크해주세요.</span>
+
+                                                        </p>
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox" id="lb_holiday_01" value="월요일"
+                                                                    name="WeekWorkHoliday">
+                                                                <label for="lb_holiday_01">월</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="lb_holiday_02" value="화요일"
+                                                                    name="WeekWorkHoliday">
+                                                                <label for="lb_holiday_02">화</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="lb_holiday_03" value="수요일"
+                                                                    name="WeekWorkHoliday">
+                                                                <label for="lb_holiday_03">수</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="lb_holiday_04" value="목요일"
+                                                                    name="WeekWorkHoliday">
+                                                                <label for="lb_holiday_04">목</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="lb_holiday_05" value="금요일"
+                                                                    name="WeekWorkHoliday">
+                                                                <label for="lb_holiday_05">금</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="lb_holiday_06" value="토요일"
+                                                                    name="WeekWorkHoliday">
+                                                                <label for="lb_holiday_06">토</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="lb_holiday_07" value="일요일"
+                                                                    name="WeekWorkHoliday">
+                                                                <label for="lb_holiday_07">일</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>임금 </th>
+                                                <td>
+                                                    <div class="pay">
+                                                        <ul class="pay1">
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.PayTypeCode"
+                                                                    value="시급" id="lb_pay1_01" title="임금 유형" />
+                                                                <label for="lb_pay1_01">시급</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.PayTypeCode"
+                                                                    value="일급" id="lb_pay1_02" />
+                                                                <label for="lb_pay1_02">일급</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.PayTypeCode"
+                                                                    value="주급" id="lb_pay1_03" />
+                                                                <label for="lb_pay1_03">주급</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.PayTypeCode"
+                                                                    value="월급" id="lb_pay1_04" />
+                                                                <label for="lb_pay1_04">월급</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.PayTypeCode"
+                                                                    value="건별" id="lb_pay1_05" />
+                                                                <label for="lb_pay1_05">건별</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.PayTypeCode"
+                                                                    value="연봉" id="lb_pay1_06" />
+                                                                <label for="lb_pay1_06">연봉</label>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="pay2">
+
+                                                            <input type="number" name="StandardModel.PayAmount"
+                                                                id="pay_amount" class="nBox" style="width:140px;"
+                                                                min="0" max="99999999" data-maxlength="8" title="급여"
+                                                                placeholder="0" value="">원
+                                                        </div>
+                                                        <ul class="pay3">
+
+                                                            <li>
+                                                                <input type="radio" id="lb_pay2_01"
+                                                                    name="StandardModel.IsBonus" value="상여금 있음"
+                                                                    title="상여금 유무" />
+                                                                <label for="lb_pay2_01">상여금 있음</label>
+                                                                (<input type="number" id="bonus"
+                                                                    name="StandardModel.BonusAmount" value=""
+                                                                    class="nBox" style="width:100px;" title="상여금 입력"
+                                                                    placeholder="0" data-maxlength="0" />)원
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" id="lb_pay2_02"
+                                                                    name="StandardModel.IsBonus" value="상여금 없음" />
+                                                                <label for="lb_pay2_02">상여금 없음</label>
+                                                            </li>
+                                                        </ul>
+
+                                                        <ul class="pay4">
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.IsEtcPay"
+                                                                    value="기타 급여 있음" id="lb_pay3_01" title="기타 급여 유무" />
+                                                                <label for="lb_pay3_01">기타 급여 있음</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="StandardModel.IsEtcPay"
+                                                                    value="기타 급여 없음" id="lb_pay3_02" />
+                                                                <label for="lb_pay3_02">기타 급여 없음</label>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="pay5">
+                                                            <ul class="payBx" style=display:none>
+
+                                                                <li>
+                                                                    <input type="text"
+                                                                        name="EtcPayModels[0].PayItemName"
+                                                                        dev-max-length="20" class="tBox"
+                                                                        title="기타 급여 항목명" placeholder="항목명">
+                                                                    <input type="number"
+                                                                        name="EtcPayModels[0].PayAmount" class="nBox"
+                                                                        title="기타 급여">원
+                                                                </li>
+
+                                                            </ul>
+                                                            <button type="button" class="btnAdd"
+                                                                style=display:none><span
+                                                                    class="skip">항목추가</span></button>
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>임금지급일 </th>
+                                                <td>
+                                                    <ul class="payDate">
+                                                        <li>
+                                                            <input type="radio" id="lb_payDate_01"
+                                                                name="StandardModel.PayGiveDayType" value="매월"
+                                                                title="임금지급유형" />
+                                                            <label for="lb_payDate_01">매월</label>
+                                                            (<input type="number" id="month_pay_date" class="nBox"
+                                                                style="width:60px;" name="StandardModel.PayGiveDay"
+                                                                title="임금지급일" data-maxlength="0" value="" />일)
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_payDate_02"
+                                                                name="StandardModel.PayGiveDayType" value="매주" />
+                                                            <label for="lb_payDate_02">매주</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_payDate_03"
+                                                                name="StandardModel.PayGiveDayType" value="매일" />
+                                                            <label for="lb_payDate_03">매일</label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>지급방법 </th>
+                                                <td>
+                                                    <ul class="payWay">
+                                                        <li>
+                                                            <input type="radio" id="lb_payWay_01"
+                                                                name="StandardModel.PayGiveModeType" value="직접 지급"
+                                                                title="지급방법" />
+                                                            <label for="lb_payWay_01">직접 지급</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="lb_payWay_02"
+                                                                name="StandardModel.PayGiveModeType" value="예금통장에 입금" />
+                                                            <label for="lb_payWay_02">예금통장에 입금</label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>사회보험&nbsp;적용여부 </th>
+                                                <td>
+                                                    <input id="StandardModel_SocialInsCode"
+                                                        name="StandardModel.SocialInsCode" type="hidden" value="0000" />
+                                                    <ul class="insurance">
+                                                        <li><input type="checkbox" name="insurance_4"
+                                                                id="lb_insurance_01" value="고용보험" /><label
+                                                                for="lb_insurance_01">고용보험</label></li>
+                                                        <li><input type="checkbox" name="insurance_4"
+                                                                id="lb_insurance_02" value="산재보험" /><label
+                                                                for="lb_insurance_02">산재보험</label></li>
+                                                        <li><input type="checkbox" name="insurance_4"
+                                                                id="lb_insurance_03" value="국민연금" /><label
+                                                                for="lb_insurance_03">국민연금</label></li>
+                                                        <li><input type="checkbox" name="insurance_4"
+                                                                id="lb_insurance_04" value="건강보험" /><label
+                                                                for="lb_insurance_04">건강보험</label></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>작성일 </th>
+                                                <td>
+                                                    <div class="date">
+                                                        <input data-val="true" data-val-date="WriteDate 필드는 날짜여야 합니다."
+                                                            id="StandardModel_WriteDate" name="StandardModel.WriteDate"
+                                                            title="작성일" type="hidden" value="2021-05-28 오후 8:22:06" />
+                                                        <span class="wBx">
+                                                            <input type="number" id="write_year"
+                                                                data-name="StandardModel.WriteDate" value=""
+                                                                data-maxlength="4" class="nBox" style="width:50px;"
+                                                                placeholder="2000">년
+                                                        </span>
+                                                        <span class="wBx">
+                                                            <input type="number" id="write_month"
+                                                                data-name="StandardModel.WriteDate" value=""
+                                                                data-maxlength="2" class="nBox" style="width:40px;"
+                                                                placeholder="00">월
+                                                        </span>
+                                                        <span class="wBx">
+                                                            <input type="number" id="write_day"
+                                                                data-name="StandardModel.WriteDate" value=""
+                                                                data-maxlength="2" class="nBox" style="width:40px;"
+                                                                placeholder="00">일
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <input id="StandardModel_BossName" name="StandardModel.BossName"
+                                                type="hidden" value="" />
+                                        </tbody>
+                                    </table>
+                                    <!-- 필수항목 //-->
+
+
+                                </div>
+                            </div>
+
+
+                        </div><input data-val="true" data-val-required="BindFirstWriterType 필드가 필요합니다."
+                            id="MainModel_BindFirstWriterType" name="MainModel.BindFirstWriterType" type="hidden"
+                            value="Employee" /><input data-val="true" data-val-required="BindFormType 필드가 필요합니다."
+                            id="MainModel_BindFormType" name="MainModel.BindFormType" type="hidden"
+                            value="Standard" /><input data-val="true" data-val-required="BindWriteStateType 필드가 필요합니다."
+                            id="MainModel_BindWriteStateType" name="MainModel.BindWriteStateType" type="hidden"
+                            value="None" /><input data-val="true" data-val-number="BindCurrentWriterType 필드는 숫자여야 합니다."
+                            data-val-required="BindCurrentWriterType 필드가 필요합니다." id="BindCurrentWriterType"
+                            name="BindCurrentWriterType" type="hidden" value="2" /><input data-val="true"
+                            data-val-number="GI_No 필드는 숫자여야 합니다." id="MainModel_GI_No" name="MainModel.GI_No"
+                            type="hidden" value="" /><input data-val="true" data-val-number="Pass_No 필드는 숫자여야 합니다."
+                            data-val-required="Pass_No 필드가 필요합니다." id="Pass_No" name="Pass_No" type="hidden"
+                            value="0" /><input id="P_Type" name="P_Type" type="hidden" value="" /><input id="UID"
+                            name="UID" type="hidden" value="" /><input data-val="true"
+                            data-val-number="FrncNo 필드는 숫자여야 합니다." id="MainModel_FrncNo" name="MainModel.FrncNo"
+                            type="hidden" value="" /><input id="VsUID" name="VsUID" type="hidden" value="" />
+                    </form>
+                    <div class="btBx2">
+                        <button type="button" class="btnAgree btnOff">개인정보수집 및 이용 동의</button>
+                        <button type="button" class="btnView">상세보기</button>
+                        <div class="lyAgree" style="display:none;">
+                            <div class="infoTx">유언장를 이용하시려면 선택한 유언장 양식에 해당하는 각각의 항목을 입력하여야 하며 해당 항목을 입력하지 않으면 서비스를 이용하실
+                                수 없습니다.</div>
+                            <ul>
+                                <li>1. 개인정보의 수집 및 이용목적 : <strong>유언장 작성에 필요한 정보 수집</strong></li>
+                                <li>2. 수집하는 개인정보의 항목 : <strong>이름, 주소, 연락처</strong></li>
+                                <li>3. 개인정보의 보유 및 이용기간 : <strong>개인정보 동의시점으로부터 1개월간 보유되며 계약완료 시 1년간 보유</strong></li>
+                            </ul>
+                            <button type="button" class="btnClose"><span class="skip">닫기</span></button>
+                        </div>
+                    </div>
+                    <div class="btnBx">
+                        <!--<button type="button" class="btnOff" id='make_contract'>컨트랙트 생성</button> -->
+                        <!--<button type="button" class="btnOff" id='make_contract'  onclick="location.href='CreatedContract.html'">컨트랙트 생성</button>-->
+                        <!--receive_data와 연동-->
+                        <button type="button" class="btnOff" id='make_contract'>작성완료</button>
+
+                    </div>
+                    <!--<div class="btnTop"><button type="button"><span class="skip">맨위로</span></button></div>-->
+                </div>
+                <!-- 유언장 : 표준 유언장 //-->
+            </div>
+        </div>
+        <!--// Footer -->
+    </div>
+
+
+
+    <!-- 저작권 표시
+        <div id="footer">
+    <address> &copy; <a href="http://company.jobkorea.co.kr" target="_blank">KoreaUniversity.</a> All rights reserved.</address>
+</div>
+-->
+    <script type="text/javascript">
+        /* js lazy fn */
+        function loadScript(url, callback) {
+            var scriptEle = document.createElement('script');
+            scriptEle.type = 'text/javascript';
+            var loaded = false;
+            scriptEle.onreadystatechange = function () {
+                // 서버에서 읽어올 경우 loaded, 캐쉬에서 가져올 경우 complete 이기에 둘 모두 처리
+                if (this.readyState == 'loaded' || this.readyState == 'complete') {
+                    if (loaded) return;
+                    loaded = true;
+                    callback();
+                }
+            }
+            scriptEle.onload = function () {
+                callback();
+            };
+            scriptEle.src = url;
+            document.getElementsByTagName('head')[0].appendChild(scriptEle);
+        }
+    </script>
+
+    <script type="text/javascript">
+        const API_URL = "https://eth-goerli.alchemyapi.io/v2/hg92auHR45YY7qqwXJ53OkMEwvzopiUg";
+        const PUBLIC_KEY = "0xB054EFB930A95b518d008cF7c260b1d717C0C4B7";
+        const PRIVATE_KEY = "100491a9268396064cc16982efbc08c89a7031a4454fbbc1c12d4319f5f0ed3b";
+        const web3 = AlchemyWeb3.createAlchemyWeb3(API_URL);
+        // console.log(web3);
+        const contractAddress = "0x939B78E32b82da8053AB5968691dD0117790c61d";
+
+        let jsonData;
+        $.ajax({
+            url:"json/MyNFT.json",
+            async: false,
+            dataType: "JSON",
+            success: function (obj) {
+                jsonData = obj;
+            }
+        });
+        // console.log(jsonData)
+        const nftContract = new web3.eth.Contract(jsonData.abi, contractAddress);
+
+        async function mintNFT(tokenURI) {
+            const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, 'latest'); //get latest nonce
+            //the transaction
+            const tx = {
+                'from': PUBLIC_KEY,
+                'to': contractAddress,
+                'nonce': nonce,
+                'gas': 500000,
+                'maxPriorityFeePerGas': 2999999987,
+                'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()
+            }
+
+            const signedTx = await web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
+            const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+            window.alert(`유언장 NFT 생성 완료! \n Transaction receipt: ${JSON.stringify(transactionReceipt)}`);
+        }
+
+        window.addEventListener('load', async () => {
+            $("#connect_wallets").on("click", function () {
+
+                if (window.ethereum) {
+                    window.ethereum
+                        .enable()
+                        .then(accounts => {
+
+                            window.alert("메타마스크 지갑이 연결되어 유언장을 작성할 준비가 되셨습니다.");
+
+                        })
+                        .catch(reason => {
+                            window.alert("메타마스크 지갑이 연결되지 않아 유언을 작성할 수 없습니다. 확장 프로그램을 열어 연결을 시도해주세요. ");
+
+                        });
+                } else {
+                    window.alert("메타마스크 지갑을 설치하셔야 유언작성이 가능합니다.");
+
+                }
+            });
+
+            $("#mint_NFT").on("click", function () {
+                if (window.ethereum) {
+                    window.ethereum
+                        .enable()
+                        .then(accounts => {
+                            mintNFT("http://ipfs.io/ipfs/QmcAWDBGymXNdEdkDz3GCuFSNvJyqWyiV77FLxtVgkYDRZ")
+                                .then(report => window.alert(report))
+                                .catch(why => window.alert(why));
+                        })
+                        .catch(reason => {
+                            window.alert(reason);
+                        });
+                } else {
+                    window.alert("메타마스크 지갑을 설치하셔야 유언작성이 가능합니다.");
+
+                }
+            });
+
+        });
+    </script>
+
+
+    <!-- <script type="text/javascript" src="/Scripts/JS/jq/jquery.js"></scrip> -->
+
+
+    <!--[if IE]> <script type="text/javascript" src="/Scripts/JS/contract/excanvas.js"></script> <![endif]-->
+    <!-- <script type="text/javascript" src="/Scripts/JS/contract/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/Scripts/JS/contract/jquery.signature.min.js"></script>
+    <script type="text/javascript" src="/Scripts/JS/mon_common.js"></script>
+    <script type="text/javascript" src="/Scripts/mon/biz/contract/save/mon.contract.save.core.js?v=20210528201"></script>
+    <script type="text/javascript" src="/Scripts/mon/biz/contract/save/mon.contract.save.regist.js?v=20210528201"></script>
+    <script>
+        mon.contract.save.regist.vars.currentWriterType = 2;
+        mon.contract.save.regist.vars.writeStateType = 0;
+        mon.contract.save.regist.vars.firstWriterType = 2;
+        mon.contract.save.regist.vars.minPay = 8720;
+        mon.contract.save.regist.vars.minPayYear = 2021;
+        $(document).ready(function () {
+            mon.contract.save.regist.method.init();
+        });
+    </script> -->
+
+
+</body>
+
+</html>

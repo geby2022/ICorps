@@ -1,0 +1,1696 @@
+html {
+    _overflow-y: scroll;
+    _overflow-x: auto;
+    height: 100%
+}
+
+
+
+body,
+button,
+input,
+option,
+select,
+textarea {
+    border: none;
+    outline: none;
+    font-family: Malgun Gothic, "\B9D1\C740   \ACE0\B515", dotum, "\B3CB\C6C0", arial, sans-serif;
+    font-size: 0px;/*여기가 0px여야 최상단 빈 줄이 안 생긴다*/
+    height :auto;
+    padding: 500px 0;
+    color: #494949; /*~는 반드시 기재되어야 합니다.*/
+    -webkit-print-color-adjust:exact; /*인쇄시 배경색 나오도록*/
+}
+
+
+
+blockquote,
+body,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: 12px
+    
+}
+
+li,
+ol,
+ul {
+    list-style: none
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    font-size: 100%
+    
+}
+
+fieldset,
+form,
+img {
+    border: 0
+}
+
+img {
+    vertical-align: top
+}
+
+address,
+caption,
+em {
+    font-weight: 400;
+    font-style: normal
+}
+
+#accessibility,
+.blind,
+.skip,
+legend {
+    overflow: hidden;
+    position: absolute;
+    top: -5000em;
+    width: 1px;
+    height: 1px;
+    line-height: 0;
+    font-size: 0;
+    clip: rect(0, 0, 0, 0)
+}
+
+.clear {
+    clear: both
+}
+
+hr {
+    display: none
+}
+
+button {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(255, 5, 5, 0);
+    cursor: pointer
+}
+
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+button:disabled {
+    cursor: default
+}
+
+input,
+option,
+select,
+textarea {
+    vertical-align: middle
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    color: #494949;
+    text-decoration: none
+}
+
+a:active,
+a:hover {
+    color: #06c;
+    text-decoration: underline
+}
+
+iframe {
+    border: none;
+    vertical-align: top
+}
+
+#skipNavition {
+    position: relative;
+    z-index: 10003
+}
+
+#skipNavition a {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 200px;
+    height: 24px;
+    padding-top: 4px;
+    background-color: #000;
+    color: #fff !important;
+    text-align: center
+}
+
+#skipNavition a:focus,
+#skipNavition a:hover {
+    top: 0
+}
+
+div.bug {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0
+}
+
+.alignBug {
+    float: left;
+    padding-top: 3px
+}
+
+
+
+.skip-navigation {
+    position: absolute;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    left: -10000px;
+    text-indent: -30000px
+}
+
+.hide {
+    display: none !important
+}
+
+.b {
+    font-weight: 700 !important
+}
+
+.u {
+    text-decoration: underline !important
+}
+
+.ls_1 {
+    letter-spacing: -1px
+}
+
+.ls_2 {
+    letter-spacing: -2px
+}
+
+.ls_3 {
+    letter-spacing: -3px
+}
+
+.alignLeft {
+    text-align: left
+}
+
+.alignCenter {
+    text-align: center
+}
+
+.alignRight {
+    text-align: right
+}
+
+.leftWingBnr {
+    position: absolute;
+    top: 0;
+    left: -120px
+}
+
+.leftWingBnrEvt {
+    position: absolute;
+    top: -130px;
+    left: -138px
+}
+
+.rightWingBnr {
+    position: absolute;
+    top: 0;
+    right: -128px;
+    z-index: 1001
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: " ";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.bol {
+    font-weight: 700
+}
+
+.bol,
+.wc {
+    letter-spacing: -1px
+}
+
+.wc {
+    color: #fff
+}
+
+.wc a:active,
+.wc a:hover,
+.wc a:link,
+.wc a:visited {
+    color: #fff;
+    letter-spacing: -1px
+}
+
+.wc a:visited {
+    text-decoration: none
+}
+
+.wc a:hover {
+    text-decoration: underline
+}
+
+a:hover {
+    text-decoration: none
+}
+
+input,
+option,
+select,
+textarea {
+    font-size: 15px;
+    letter-spacing: -.5px
+}
+
+#container { /*A4 용지 바깥 컨테이너 색깔!*/
+    padding: 0px 0px 0px 0px;
+    background: #c6b1ff;
+    text-align: center;
+}
+
+#content { 
+    width: 800px;
+    margin: 0 auto;
+    padding: 40px 0 40px; /*표준 근로계약서 위 아래 간격과 관련깊음*/
+    
+}
+
+#footer {
+    background: #fff
+    
+}
+
+#footer address {
+    margin-top: 0
+    
+}
+
+.nBox, /*텍스트 박스 */
+.tBox {
+    border: 1px solid #fff;
+    padding: 5px 4px;
+    vertical-align: middle
+    
+}
+
+.nBox {
+    text-align: right;
+}
+
+select {
+    width: 180px;
+    height: 32px;
+    padding: 5px;
+    border: 1px solid #dbdee1;
+    vertical-align: middle
+    
+}
+
+select:active,
+select:focus,
+select:hover {
+    border: 1px solid #f63;
+    outline: none
+}
+
+input[type=checkbox],
+input[type=radio] {
+    margin-right: 5px
+}
+
+.inputLoc {
+    width: 13px;
+    height: 13px;
+    margin-right: 4px;
+    vertical-align: middle
+}
+
+.monContract {
+    width: 800px;
+    letter-spacing: -1px
+}
+
+.monContract .ctBx { /*전체 A4 흰 종이 색깔 */
+    width: 800px;
+    position: relative;
+    background: #fff;
+    
+}
+
+/*
+   width: 800px;
+    position: relative;
+    background: #fff
+*/
+/*
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 10mm auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0,1);
+    position: relative;
+    background: #fff
+*/
+.monContract .ctBx:after { /*A4 용지 맨 아랫단 색깔 */ 
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 0px;
+    background-color: rgb(57, 57, 57);
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+    
+
+    
+}
+
+.monContract .ctBx+.btnBx {
+    margin-top: 50px;
+}
+
+.monContract .flowBx { 
+    font-size: 0px;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    background-color: rgb(34, 4, 54); /*리카르디안 컨트랙트 써있는 곳 박스 색깔*/
+    
+}
+
+.monContract .flowBx li {
+    position: relative;
+    display: inline-block;
+    width: 33.3%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    color: #cb3e18;
+    letter-spacing: -1.5px;
+    
+}
+
+
+
+.monContract .flowBx li:last-child:after {
+    display: none;
+    
+}
+
+.monContract .flowBx li>strong {
+    
+    font-weight: 300;
+    color: rgb(255, 255, 255) /*표준 근로계약서 글씨 색깔*/
+}
+
+.monContract .flowBx li>strong span {
+    border-color: #fff
+}
+
+.monContract .flowBx li span {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    line-height: 36px;
+    font-size: 28px;
+    border: 2px solid #cb3e18;
+    -webkit-border-radius: 300%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    margin-right: 10px;
+    vertical-align: 1px
+}
+
+.monContract .selType {
+    margin: 0 auto;
+    padding: 70px 0
+}
+
+.monContract .selType ul {
+    text-align: center
+}
+
+.monContract .selType ul li {
+    display: inline-block;
+    width: 221px;
+    height: 274px;
+    margin: 0 8px 20px
+}
+
+.monContract .selType ul li a {
+    display: block;
+    width: 221px;
+    height: 274px
+}
+
+.monContract .selType ul li a .sTxt {
+    display: block;
+    width: 221px;
+    text-align: center;
+    font-size: 13.5px;
+    color: #989898
+}
+
+.monContract .selType ul li a .bTxt {
+    display: block;
+    width: 221px;
+    text-align: center;
+    font-size: 24px;
+    color: #3a3a3a;
+    line-height: 27px
+}
+
+.monContract .selType ul li a:hover .bTxt {
+    color: #fff
+}
+
+.monContract .selType ul.user li.t1,
+.monContract .selType ul.user li.t2 {
+    margin-bottom: 0
+}
+
+.monContract .selType ul.user a .sTxt {
+    padding: 165px 0 25px
+}
+
+.monContract .notiBx {
+    padding: 28px 50px
+}
+
+.monContract .notiBx+.selType {
+    padding-top: 0
+}
+
+.monContract .notiBx .inner {
+    padding: 20px;
+    background: #fff0eb
+}
+
+.monContract .notiBx li {
+    position: relative;
+    padding-left: 10px;
+    font-family: Malgun Gothic, "\B9D1\C740   \ACE0\B515", dotum, "\B3CB\C6C0", arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    text-align: left
+}
+
+.monContract .notiBx li:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    display: block;
+    width: 3px;
+    height: 3px;
+    background: #9e9e9e
+}
+
+.monContract .notiBx li+li {
+    margin-top: 5px
+}
+
+.monContract .notiBx li strong {
+    color: #1d1d1d
+}
+
+.monContract .notiMsg {
+    padding: 20px 15px 0;
+    border-top: 1px solid #e3e3e3;
+    color: #7b8085;
+    font-size: 14px
+}
+
+
+.monContract .writeForm {
+    padding: 50px 0 50px 40px
+}
+
+.monContract .writeForm .tbWrite {
+    width: 720px; /*textarea 넓이 */
+    border-bottom: 1px solid #bbbdc0;
+    text-align: left;
+    font-size: 14.5px
+}
+
+.monContract .writeForm .tbWrite tr {
+    border-top: 1px solid #bbbdc0;
+    color: #494949
+}
+
+.monContract .writeForm .tbWrite tr.gubunTr {
+    border-top: 1px solid #717377
+}
+
+.monContract .writeForm .tbWrite tr th { /*드뎌 찾았다. A4 좌측 칸 배경색*/
+    width: 165px;
+    padding: 16px 0 16px 15px;
+    vertical-align: top;
+    background: #dddcdc; 
+    text-align: left;
+    
+}
+
+.monContract .writeForm .tbWrite tr th.off {
+    color: #9c9c9c
+}
+
+.monContract .writeForm .tbWrite tr th .mark {
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    width: 7px;
+    height: 7px;
+    margin: 0 0 0 6px;
+    background: url(/monimg/talk_v02/contract/icon_star.png) no-repeat;
+    color: hsla(0, 0%, 100%, 0);
+    font-size: 0;
+    text-indent: -9999px
+}
+
+.monContract .writeForm .tbWrite tr td { /*필수항목 회색박스 크기*/
+    width: 540px;
+    padding-left: 15px
+}
+
+.monContract .writeForm .tbWrite tr td .wBx {
+    margin: 0 7px 0 0
+}
+
+.monContract .writeForm .tbWrite tr td .cmt {
+    display: inline-block;
+    padding: 0 0 0 25px;
+    color: #bebebe
+}
+
+.monContract .writeForm .tbWrite tr td .hyphen {
+    display: inlnie-block;
+    padding: 0 5px
+}
+
+.monContract .writeForm .tbWrite tr td .workDay {
+    *zoom: 1;
+    padding: 7px 0
+}
+
+.monContract .writeForm .tbWrite tr td .workDay:after,
+.monContract .writeForm .tbWrite tr td .workDay:before {
+    content: " ";
+    display: table
+}
+
+.monContract .writeForm .tbWrite tr td .workDay:after {
+    clear: both
+}
+
+.monContract .writeForm .tbWrite tr td .workDay li {
+    float: left;
+    width: 120px;
+    height: 20px;
+    padding: 8px 0
+}
+
+.monContract .writeForm .tbWrite tr td .holiday .dayTx {
+    padding: 13px 0;
+    border-bottom: 1px solid #bbbdc0
+}
+
+.monContract .writeForm .tbWrite tr td .holiday .dayTx em {
+    display: inline-block;
+    padding: 0 5px;
+    color: #191919
+}
+
+.monContract .writeForm .tbWrite tr td .holiday ul {
+    height: 34px;
+    padding: 13px 0 0
+}
+
+.monContract .writeForm .tbWrite tr td .holiday ul li {
+    float: left;
+    width: 72px
+}
+
+.monContract .writeForm .tbWrite tr td .holiday.none li {
+    float: left;
+    width: 67px
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 {
+    padding: 13px 13px 13px 0
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 .dayTx {
+    display: inline-block;
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding: 0;
+    color: #898989;
+    vertical-align: middle
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 .dayTx.type-none {
+    position: relative;
+    color: #b9b9b9
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 .dayTx.type-none em {
+    color: #b9b9b9
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 .dayTx.type-none:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #b9b9b9
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 .tip {
+    display: block;
+    margin-top: 3px;
+    font-size: 14px;
+    color: #6d6d6d
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 .check-box {
+    margin-left: 5px
+}
+
+.monContract .writeForm .tbWrite tr td .holiday_2 .check-box input {
+    margin-right: 0
+}
+
+.monContract .writeForm .tbWrite tr td .pay:after,
+.monContract .writeForm .tbWrite tr td .pay:before {
+    content: " ";
+    display: table
+}
+
+.monContract .writeForm .tbWrite tr td .pay:after {
+    clear: both
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay1 {
+    height: 82px;
+    padding: 7px 0 0;
+    border-bottom: 1px solid #bbbdc0
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay1 li {
+    float: left;
+    width: 120px;
+    padding: 8px 0
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay2,
+.monContract .writeForm .tbWrite tr td .pay .pay3 {
+    height: 38px;
+    padding: 8px 0 0;
+    border-bottom: 1px solid #bbbdc0
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay3 li {
+    float: left;
+    width: 240px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay3 li:nth-child(2) {
+    padding-top: 4px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay4 {
+    height: 35px;
+    padding: 11px 0 0
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay4 li {
+    float: left;
+    width: 240px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay5 {
+    position: relative
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay5 .payBx {
+    padding: 7px 51px 2px 0;
+    border-top: 1px solid #bbbdc0
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay5 .payBx li {
+    width: 485px;
+    margin: 0 0 5px;
+    border: 1px solid #dbdee1
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay5 .payBx li .tBox {
+    width: 210px;
+    border: 1px solid #dbdee1;
+    background: #dbdee1;
+    text-indent: 10px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay5 .payBx li .nBox {
+    width: 225px;
+    margin-right: 5px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay5 .btnAdd {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 495px;
+    width: 27px;
+    height: 27px;
+    background: url(/monimg/talk_v02/contract/btn_add.png) no-repeat
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay6 {
+    height: 35px;
+    padding: 11px 0 0;
+    border-bottom: 1px solid #bbbdc0
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay7 {
+    padding: 7px 0 2px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay7 .payBx {
+    width: 510px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay7 .payBx li {
+    width: 510px;
+    margin: 0 0 5px;
+    border: 1px solid #dbdee1
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay7 .payBx li .tx {
+    float: left;
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #dbdee1;
+    background: #dbdee1;
+    text-indent: 10px;
+    
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay7 .payBx li .nBox {
+    width: 225px;
+    margin-right: 5px
+}
+
+.monContract .writeForm .tbWrite tr td .pay .pay8 {
+    height: 38px;
+    padding: 8px 0 0;
+    border-top: 1px solid #bbbdc0
+}
+
+.monContract .writeForm .tbWrite tr td .payDate li {
+    float: left;
+    margin-right: 30px;
+    padding-top: 4px
+}
+
+.monContract .writeForm .tbWrite tr td .payDate li:first-child {
+    padding-top: 0
+}
+
+.monContract .writeForm .tbWrite tr td .payWay {
+    height: 35px;
+    padding: 11px 0 0
+}
+
+.monContract .writeForm .tbWrite tr td .payWay li {
+    float: left;
+    width: 170px
+}
+
+.monContract .writeForm .tbWrite tr td .signPad {
+    width: 125px;
+    height: 25px;
+    padding: 5px;
+    margin: 10px 0;
+    border: 0px solid #b4bac0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    resize: none;
+    position: relative
+}
+
+.monContract .writeForm .tbWrite tr td .save-checkbox {
+    display: inline-block
+}
+
+.monContract .writeForm .tbWrite tr td .save-checkbox label {
+    color: #000
+}
+
+.monContract .writeForm .tbWrite tr td .btnReset { /*서명 초기화 버튼~ */
+    float: right;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    padding: 5px 5px 5px 18px;
+    background: url(/monimg/talk_v02/contract/icon_reset_n.png) no-repeat 0;
+    -moz-background-size: 16px auto;
+    -o-background-size: 16px auto;
+    background-size: 16px auto;
+    font-family: Malgun Gothic, "\B9D1\C740   \ACE0\B515", dotum, "\B3CB\C6C0", arial, sans-serif;
+    font-size: 14.5px;
+    color: #494949;
+    letter-spacing: -1px
+}
+
+.monContract .writeForm .tbWrite tr td .doc {
+    padding: 7px 0
+}
+
+.monContract .writeForm .tbWrite tr td .doc li {
+    margin: 0 0 5px
+}
+
+.monContract .writeForm .tbWrite tr td .signPad .cmt {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0
+}
+
+.monContract .writeForm .tbWrite tr td .selYear {
+    width: 102px
+}
+
+.monContract .writeForm .tbWrite tr td .selDate {
+    width: 72px;
+}
+
+.monContract .writeForm .tbWrite tr td .textarea {
+    width: 525px;
+    height: 170px;
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #b4bac0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    resize: none;
+    
+}
+
+.monContract .writeForm .tbWrite tr td .period {
+    padding: 8px 0
+}
+
+.monContract .writeForm .tbWrite tr td .period .noti {
+    padding-top: 8px;
+    font-size: 14px;
+    color: #6d6d6d
+}
+
+.monContract .writeForm .tbWrite tr td .chkWork {
+    margin: 10px 0
+}
+
+.monContract .writeForm .tbWrite tr td .chkWork>span+span {
+    margin-left: 40px
+}
+
+.monContract .writeForm .tbWrite tr td .tbWork {
+    margin: 13px 0 15px;
+    width: 100%
+}
+
+.monContract .writeForm .tbWrite tr td .tbWork td,
+.monContract .writeForm .tbWrite tr td .tbWork th {
+    padding: 0;
+    border: 1px solid #dbdee1;
+    background: #fdfdfd;
+    font-size: 14px;
+    font-weight: 400;
+    color: #898989;
+    text-align: center;
+    text-indent: 0;
+    vertical-align: middle
+}
+
+.monContract .writeForm .tbWrite tr td .tbWork th em {
+    color: #191919
+}
+
+.monContract .writeForm .tbWrite tr td .tbWork thead th {
+    padding: 5px 0;
+    background: #f6f7f7;
+    font-size: 13px;
+    color: #6d6d6d
+}
+
+.monContract .writeForm .tbWrite tr td .tbWork .workTime {
+    display: inline-block;
+    margin-top: 2px
+}
+
+.monContract .writeForm .tbWrite tr td .tbWork .nBox {
+    margin-top: -2px;
+    padding: 0 4px;
+    width: 32px
+}
+
+.monContract .writeForm .tbWrite tr td .tbWork select {
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    background: #fdfdfd
+}
+
+.monContract .writeForm .tbWrite tr td .insurance li {
+    float: left;
+    width: 120px
+}
+
+.monContract .writeForm .tbWrite tr td label {
+    vertical-align: middle
+}
+
+.monContract .writeForm .tbWrite_step1 {
+    margin-bottom: 40px
+}
+
+.monContract .writeForm .writeWrp {
+    position: relative
+}
+
+.monContract .writeForm .writeWrp .articleTit {
+    height: 24px;
+    margin-bottom: 12px;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-align: left;
+    color: #676767
+}
+
+.monContract .writeForm .writeWrp .articleTit strong {
+    color: rgb(0, 0, 0);
+    vertical-align: middle
+}
+
+.monContract .writeForm .writeWrp .articleTit_2 {
+    margin-top: 40px
+}
+
+.monContract .writeForm .writeWrp .cmtMark {
+    float: right;
+    margin-right: 40px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 400
+}
+
+.monContract .writeForm .writeWrp .cmtMark .mark {
+    display: inline-block;
+    position: relative;
+    margin-right: 3px;
+    width: 7px;
+    height: 7px;
+    background: url(/monimg/talk_v02/contract/icon_star.png) no-repeat;
+    color: hsla(0, 0%, 100%, 0);
+    font-size: 0;
+    text-indent: -9999px;
+    vertical-align: middle
+}
+
+.monContract .chkGroup {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.monContract .chkGroup input[type=checkbox] {
+    display: none
+}
+
+.monContract .chkGroup input[type=checkbox]+label .icnAgree {
+    display: inline-block;
+    margin-right: 8px;
+    width: 34px;
+    height: 34px;
+    background: url(/monimg/talk_v02/contract/icon_btnAgree.png) no-repeat 0 0;
+    vertical-align: -9px
+}
+
+.monContract .chkGroup input[type=checkbox]:checked+label .icnAgree {
+    background-position: 0 -50px
+}
+
+.monContract .chkGroup label {
+    font-size: 18px
+}
+
+.monContract .complete {
+    width: 421px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    background: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px
+}
+
+.monContract .complete+.notiMsg {
+    padding-top: 15px;
+    border-top: none
+}
+
+.monContract .complete .tx1 {
+    padding-top: 310px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px
+}
+
+.monContract .complete .tx2 {
+    font-size: 14px;
+    margin-bottom: 30px;
+    color: #989898
+}
+
+.monContract .complete .tx3 {
+    padding-top: 310px;
+    margin-bottom: 30px;
+    font-size: 20px
+}
+
+.monContract .complete .btnBx {
+    position: relative;
+    padding-bottom: 35px
+}
+
+.monContract .complete .btnBx .btn {
+    display: inline-block;
+    margin: 0 3px;
+    width: 193px;
+    height: 44px;
+    background-color: #373c42;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 40px
+}
+
+.monContract .complete .btnBx .btn.org {
+    background-color: rgb(0, 0, 0)
+}
+
+.monContract .complete .btnBx .btnNewWrite {
+    position: absolute;
+    bottom: -15px;
+    right: 15px;
+    display: block;
+    padding: 0 2px 5px;
+    border-bottom: 1px solid #b2b2b2;
+    font-family: Malgun Gothic, "\B9D1\C740   \ACE0\B515", dotum, "\B3CB\C6C0", arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #949494;
+    letter-spacing: -1px
+}
+
+.monContract .complete .btnBx .btnNewWrite:after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    margin-left: 10px;
+    background: url(/monimg/common/icon_arrow_r.png)
+}
+
+.monContract .complete01 .tx1 {
+    background: url(/monimg/talk_v02/contract/complete_01.png) no-repeat 50% 84px
+}
+
+.monContract .complete02 .tx1 {
+    background: url(/monimg/talk_v02/contract/complete_02.png) no-repeat 50% 84px
+}
+
+.monContract .complete03 .tx3 {
+    background: url(/monimg/talk_v02/contract/complete_03.png) no-repeat 50% 84px
+}
+
+.monContract .complete04 .tx1 {
+    background: url(/monimg/talk_v02/contract/complete_02.png) no-repeat 50% 84px
+}
+
+.monContract .conView {
+    width: 720px;
+    padding: 50px 0 50px 40px;
+    text-align: left;
+    font-size: 15px
+}
+
+.monContract .conView img {
+    vertical-align: middle
+}
+
+.monContract .conView .tit {
+    width: 720px;
+    height: 90px;
+    line-height: 85px;
+    margin-bottom: 50px;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    background: #f6f6f6;
+    text-align: center;
+    font-size: 27px;
+    color: #000
+}
+
+.monContract .conView .topTx {
+    margin: 0 0 50px;
+    font-size: 17px
+}
+
+.monContract .conView .topTx span {
+    display: inline-block;
+    min-width: 10px;
+    border-bottom: 1px solid #bbbdc0;
+    padding: 0 20px
+}
+
+.monContract .conView .agreeTx {
+    margin: 50px 0 30px;
+    font-size: 17px
+}
+
+.monContract .conView .agreeTx span {
+    display: inline-block;
+    min-width: 10px;
+    border-bottom: 1px solid #bbc0bd;
+    padding: 0 20px
+}
+
+.monContract .conView .itemBx .cmt {
+    margin: 2px 0 0;
+    color: #919191;
+    font-size: 13px;
+    word-break: keep-all
+}
+
+.monContract .conView .itemBx dl {
+    position: relative;
+    padding-left: 150px;
+    margin-bottom: 25px
+}
+
+.monContract .conView .itemBx dl dt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 15px
+}
+
+.monContract .conView .itemBx dl dt .num {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.monContract .conView .itemBx dl dd.bLine {
+    height: 20px;
+    border-bottom: 1px solid #bbbdc0
+}
+
+.monContract .conView .itemBx dl dd .inBx {
+    *zoom: 1;
+    clear: both;
+    margin: 0 0 10px
+}
+
+.monContract .conView .itemBx dl dd .inBx:after,
+.monContract .conView .itemBx dl dd .inBx:before {
+    content: " ";
+    display: table
+}
+
+.monContract .conView .itemBx dl dd .inBx:after {
+    clear: both
+}
+
+.monContract .conView .itemBx dl dd .inBx p {
+    float: left;
+    margin-right: 15px
+}
+
+.monContract .conView .itemBx dl dd .inBx span {
+    display: inline-block;
+    height: 18px;
+    border-bottom: 1px solid #bbbdc0;
+    padding: 0 7px;
+    letter-spacing: 0
+}
+
+.monContract .conView .itemBx dl dd .inBx span.won {
+    border-bottom: 1px solid #bbbdc0;
+    padding: 0 20px
+}
+
+.monContract .conView .itemBx dl.add dt {
+    padding-left: 0
+}
+
+.monContract .conView .itemBx .iTit {
+    padding: 0 0 25px;
+    font-size: 17px;
+    font-weight: 700
+}
+
+.monContract .conView .itemBxitemBx .cmt {
+    margin: 2px 0 0;
+    color: #919191;
+    font-size: 13px;
+    word-break: keep-all
+}
+
+.monContract .conView .wDate {
+    padding: 20px 0 40px;
+    text-align: center;
+    font-size: 19px;
+    letter-spacing: 0
+}
+
+.monContract .conView .card1 {
+    position: relative;
+    height: 236px;
+    padding: 21px 0 0 20px;
+    margin: 0 0 20px;
+    border: 1px solid #949494;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+
+.monContract .conView .card1 .who {
+    font-weight: 700;
+    height: 53px
+}
+
+.monContract .conView .card1 .coName {
+    width: 386px
+}
+
+.monContract .conView .card1 .coName dd {
+    width: 310px
+}
+
+.monContract .conView .card1 dl {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 25px
+}
+
+.monContract .conView .card1 dl dt {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.monContract .conView .card1 dl dd {
+    height: 20px;
+    border-bottom: 1px solid #bbbdc0;
+    text-indent: 10px
+}
+
+.monContract .conView .card1 .tel {
+    position: absolute;
+    top: 75px;
+    left: 430px;
+    padding-left: 33px
+}
+
+.monContract .conView .card1 .tel dd {
+    width: 200px;
+    letter-spacing: 0
+}
+
+.monContract .conView .card1 .addr dd {
+    width: 568px
+}
+
+.monContract .conView .card1 .name dd {
+    width: 188px
+}
+
+.monContract .conView .card1 .sign {
+    position: absolute;
+    top: 147px;
+    left: 321px;
+    padding-left: 40px
+}
+
+.monContract .conView .card1 .sign dt {
+    padding-top: 17px
+}
+
+.monContract .conView .card1 .sign dd {
+    overflow: hidden;
+    width: 302px;
+    height: 94px;
+    padding: 5px 0 0;
+    border: 1px solid #949494;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-indent: 0;
+    text-align: center
+}
+
+.monContract .conView .card2 {
+    position: relative;
+    height: 236px;
+    padding: 21px 0 0 20px;
+    border: 1px solid #949494;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+
+.monContract .conView .card2 .who {
+    font-weight: 700;
+    height: 53px
+}
+
+.monContract .conView .card2 dl {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 25px
+}
+
+.monContract .conView .card2 dl dt {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.monContract .conView .card2 dl dd {
+    height: 20px;
+    border-bottom: 1px solid #bbbdc0;
+    text-indent: 10px
+}
+
+.monContract .conView .card2 .tel dd {
+    width: 568px;
+    letter-spacing: 0
+}
+
+.monContract .conView .card2 .addr dd {
+    width: 568px
+}
+
+.monContract .conView .card2 .name dd {
+    width: 188px
+}
+
+.monContract .conView .card2 .sign {
+    position: absolute;
+    top: 147px;
+    left: 321px;
+    padding-left: 40px
+}
+
+.monContract .conView .card2 .sign dt {
+    padding-top: 17px
+}
+
+.monContract .conView .card2 .sign dd {
+    overflow: hidden;
+    width: 302px;
+    height: 94px;
+    padding: 5px 0 0;
+    border: 1px solid #949494;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-indent: 0;
+    text-align: center
+}
+
+.monContract .conView .card3 {
+    position: relative;
+    width: 663px;
+    height: 105px;
+    padding: 21px 0 0 20px;
+    margin: 0 0 20px 20px;
+    border: 1px solid #949494;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+
+.monContract .conView .card3 .who {
+    font-weight: 700;
+    height: 53px
+}
+
+.monContract .conView .card3 dl {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 25px
+}
+
+.monContract .conView .card3 dl dt {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.monContract .conView .card3 dl dd {
+    border-bottom: 1px solid #bbbdc0;
+    text-indent: 10px
+}
+
+.monContract .conView .card3 .name dd {
+    width: 188px
+}
+
+.monContract .conView .card3 .sign {
+    position: absolute;
+    top: 13px;
+    left: 321px;
+    padding-left: 40px
+}
+
+.monContract .conView .card3 .sign dt {
+    padding-top: 17px
+}
+
+.monContract .conView .card3 .sign dd {
+    overflow: hidden;
+    width: 302px;
+    height: 94px;
+    padding: 5px 0 0;
+    border: 1px solid #949494;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-indent: 0;
+    text-align: center
+    
+}
+
+.monContract .conView .tbView {
+    width: 100%;
+    border-top: 1px solid #bbbdc0;
+    border-bottom: 1px solid #bbbdc0
+}
+
+.monContract .conView .tbView td,
+.monContract .conView .tbView th {
+    border-left: 1px solid #dbdee1;
+    font-weight: 400;
+    text-align: center
+}
+
+.monContract .conView .tbView td:first-child,
+.monContract .conView .tbView th:first-child {
+    border-left: none
+    
+}
+
+.monContract .conView .tbView th {
+    padding: 4px 0 6px;
+    background: #f8f8f9;
+    font-size: 13px;
+    color: #6d6d6d;
+    
+}
+
+.monContract .conView .tbView td {
+    padding: 5px 0 7px;
+    border-top: 1px solid #dbdee1;
+    font-size: 14px;
+    color: #494949;
+    letter-spacing: -.2px
+}
+
+/*계약서 작성 완료 버튼 정렬 (컨트랙트 생성)*/
+.monContract .btnBx {
+    margin-top: 25px; 
+    text-align: center
+    
+}
+/*계약서 작성 완료 버튼사이즈 (컨트랙트 생성)*/
+.monContract .btnBx button {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    letter-spacing: -1.5px;
+    color: #fff;
+}
+/*계약서 작성 완료 버튼*/
+.monContract .btnBx button.btnOff {
+    background: #49023d /*버튼 색깔 */
+    
+    
+}
+
+.monContract .btnBx button.btnDef {
+    background: #fff;
+    border: 1px solid #919191;
+    color: #434a54
+    
+}
+
+.monContract .btnBx button.btnOn {
+    background: rgb(0, 0, 0);
+    
+}
+
+.monContract .btnTop button {
+    position: fixed;
+    top: 600px;
+    left: 50%;
+    margin-left: 415px;
+    width: 46px;
+    height: 46px;
+    background: url(/monimg/talk_v02/contract/btn_top.png) no-repeat;
+    
+}
+
+@page{
+    size:A4;
+    margin:0mm 0mm 0mm 0mm;
+    /*page-break-before:avoid; 인쇄시 페이지 분리되지 않도록 하는 코드 */
+}
+@media print{ /*머리글 바닥글 제거 및 사이즈 조절*/
+  
+    html,body{ /*빈 페이지 프린트되지 않도록 함*/
+        height: 100vh;
+        margin: 0 !important; 
+        padding: 0 !important;
+        overflow: hidden;
+    }
+    #print_btn { display: none;}
+    #ad{ display:none;}
+    #leftbar{ display:none;}
+    #contentarea{ width:100%;}
+    #content{ background-color:#fff; padding:16px 0px 0px 0px; }
+    
+    /*placeholder 지우기*/
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: transparent;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: transparent;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: transparent;
+    }
+
+    
+  }

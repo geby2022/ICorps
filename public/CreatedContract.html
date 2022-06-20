@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!--<script src="jquery-3.6.0.min.js"></script> jquery 불러오기-->
+    <!--<script src="../contract/receive_data.js"></script> 내가 새로 만든 컨트랙트를 파일로 만들기 위한 javascript 파일이다. 연결시켜준다. -->
+    <!--<script src="/app/CreatedContract.html"></script>-->
+    <!-- css 파일에서 레이아웃을 불러옴."../contract/layout.css"-->
+    <link rel="stylesheet" type="text/css" href="css/createdLayout.css" /> <!--스타일 시트로 이 문서를 부르겠다. text/css는 확장자-->
+    <!--<script type="text/javascript" src="/Scripts/mon/lib/jkmon/mon.pc.min.js?202105282"></script> -->>
+</head>
+<!--서명 플러그인-->
+<meta charset="utf-8"> 
+<style>
+#signature { border:1px solid rgb(255, 255, 255); }
+#save, #clear { padding:5px 20px; border:0; color:#fff; background:#000; margin-top:5px; }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+
+
+
+<div id="wrap">
+    <div id="container">
+        <a name="asMainWrap"></a>
+        <div id="content">
+            <h2 class="skip"></h2>
+            <div class="monContract">
+                <div class="flowBx">
+                    <ol> 
+                        <li><strong>유 언 장</strong></li>
+                    </ol>
+                </div>
+            
+            
+<form action="/Contract/ft1/wt2/regist" method="post">
+<style type="text/css">
+    input.tBox {width:480px;}
+</style>
+
+<div class="ctBx">
+    <div class="writeForm">
+        <!-- 유언장 1차 개편 -->
+        <div class="writeWrp">
+            
+            <!--// 필수항목 -->
+            <table class="tbWrite" summary="이 테이블에는 표준유언장 유언자 정보 항목이 포함되어 있습니다.">
+                <caption><span class="skip">표준 유언장</span></caption>
+                <tbody>
+                    <tr>
+                        <th>유언자&nbsp;이름<span class="mark">필수</span></th>
+                        <td>
+                                <textarea id="Name" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>유언자&nbsp;주소<span class="mark">필수</span></th>
+                        <td>
+                            <textarea id="Address" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>유언자&nbsp;연락처<span class="mark">필수</span></th>
+                        <td>
+                            <textarea id="Phone" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>유언자&nbsp;서명<span class="mark">필수</span></th>
+                        <td>
+                                <div class="signPad" id="EmployeeModel.EmployeeSign" title="유언자 서명"> <!--서명이미지 url 가져와서 넣어둘것-->
+                                    <img src="" id="signature" width="125" height="25"></canvas>
+                                </div>
+                                
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>수증자(피상속자) 이름<span class="mark">필수</span></th>
+                        <td>
+                            <textarea id="CompanyName" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>계약기간 </th>
+                        <td>
+                            <div>
+                                <textarea id="ContractPeriod" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>근무장소 </th>
+                        <td>
+                            <textarea id="Work_place" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>업무의&nbsp;내용 </th>
+                        <td>
+                            <textarea id="Work_content" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                                     
+                        </td>
+                    </tr>
+                        <tr>
+                            <th>유언시간 </th>
+                            <td>
+                                <textarea id="Work_Time" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>근무일 </th>
+                            <td>
+                                <textarea id="Work_Day" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                            </td>
+                        </tr>
+                        <tr style="" data-cnt="0">
+                            <th>
+                                휴일                             </th>
+                            <td>
+                                <textarea id="Holiday" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                            </td>
+                        </tr>
+                    <tr>
+                        <th>임금 </th>
+                        <td>
+                            <div class="pay">
+                                <ul class="pay2">
+                                    <textarea id="Pay_format" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                                </ul>
+                                <div class="pay2">
+                                    <textarea id="Pay_amount" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                                </div>
+                                <ul class="pay3">
+                                        <textarea id="Etc_payCheck" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                                </ul>
+                                    
+                                        <ul class="pay4">
+                                            <textarea id="Bonus" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                                        </ul>
+                                      
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>임금지급일 </th>
+                        <td>
+                            <ul class="payDate">
+                                <textarea id="Pay_date" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>지급방법 </th>
+                        <td>
+                            <ul class="payWay">
+                                <textarea id="PayWay" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>사회보험&nbsp;적용여부 </th>
+                        <td>
+                            <input id="StandardModel_SocialInsCode" name="StandardModel.SocialInsCode" type="hidden" value="0000" />
+                            <ul class="insurance">
+                                <textarea id="_4Insurance" maxlength="40" rows="1" style="width:100%; border:1; overflow:visible; text-overflow:ellipsis;" spellcheck="false" placeholder="미입력한 항목입니다." readonly ></textarea>
+                            </ul>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th>작성일 </th>
+                        <td>
+                            <div class="date">
+                                <input data-val="true" data-val-date="WriteDate 필드는 날짜여야 합니다." id="StandardModel_WriteDate" name="StandardModel.WriteDate" title="작성일" type="hidden" value="2021-05-28 오후 8:22:06" />
+                                <span class="wBx">
+                                    <input type="number" id="Write_year" data-name="StandardModel.WriteDate" value="" data-maxlength="4" class="nBox" style="width:50px;" placeholder="2000" readonly>년
+                                </span>
+                                <span class="wBx">
+                                    <input type="number" id="Write_month" data-name="StandardModel.WriteDate" value="" data-maxlength="2" class="nBox" style="width:40px;" placeholder="00" readonly>월
+                                </span>
+                                <span class="wBx">
+                                    <input type="number" id="Write_day" data-name="StandardModel.WriteDate" value="" data-maxlength="2" class="nBox" style="width:40px;" placeholder="00" readonly>일
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+<input id="StandardModel_BossName" name="StandardModel.BossName" type="hidden" value="" />                </tbody>
+            </table>
+            <!-- 필수항목 //-->
+         </div>
+        </div>
+    </tbody>
+</table>
+
+
+</div><input data-val="true" data-val-required="BindFirstWriterType 필드가 필요합니다." id="MainModel_BindFirstWriterType" name="MainModel.BindFirstWriterType" type="hidden" value="Employee" /><input data-val="true" data-val-required="BindFormType 필드가 필요합니다." id="MainModel_BindFormType" name="MainModel.BindFormType" type="hidden" value="Standard" /><input data-val="true" data-val-required="BindWriteStateType 필드가 필요합니다." id="MainModel_BindWriteStateType" name="MainModel.BindWriteStateType" type="hidden" value="None" /><input data-val="true" data-val-number="BindCurrentWriterType 필드는 숫자여야 합니다." data-val-required="BindCurrentWriterType 필드가 필요합니다." id="BindCurrentWriterType" name="BindCurrentWriterType" type="hidden" value="2" /><input data-val="true" data-val-number="GI_No 필드는 숫자여야 합니다." id="MainModel_GI_No" name="MainModel.GI_No" type="hidden" value="" /><input data-val="true" data-val-number="Pass_No 필드는 숫자여야 합니다." data-val-required="Pass_No 필드가 필요합니다." id="Pass_No" name="Pass_No" type="hidden" value="0" /><input id="P_Type" name="P_Type" type="hidden" value="" /><input id="UID" name="UID" type="hidden" value="" /><input data-val="true" data-val-number="FrncNo 필드는 숫자여야 합니다." id="MainModel_FrncNo" name="MainModel.FrncNo" type="hidden" value="" /><input id="VsUID" name="VsUID" type="hidden" value="" /></form>                <div class="btBx2">
+                    <button type="button" class="btnAgree btnOff"><!--개인정보수집 및 이용 동의--></button>
+                    <button type="button" class="btnView"><!--상세보기--></button>
+                    <div class="lyAgree" style="display:none;">
+                        <div class="infoTx">유언장를 이용하시려면 선택한 유언장 양식에 해당하는 각각의 항목을 입력하여야 하며 해당 항목을 입력하지 않으면 서비스를 이용하실 수 없습니다.</div>
+                        <ul>
+                            <li>1. 개인정보의 수집 및 이용목적 : <strong>유언장 작성에 필요한 정보 수집</strong></li>
+                            <li>2. 수집하는 개인정보의 항목 : <strong>이름, 주소, 연락처</strong></li>
+                            <li>3. 개인정보의 보유 및 이용기간 : <strong>개인정보 동의시점으로부터 1개월간 보유되며 계약완료 시 1년간 보유</strong></li>
+                        </ul>
+                        <button type="button" class="btnClose"><span class="skip">닫기</span></button>
+                    </div>
+                </div>
+                <div class="btnBx">
+                    <button type="button" class="btnOff" id='print_btn'>Print</button>
+                    <button type="button" class="btnOff" id='download_btn'>Download</button> 
+                    <!--<button type="button" class="btnOff" id='make_contract'  onclick="location.href='CreatedContract.html'">컨트랙트 생성</button>--> <!--receive_data와 연동-->
+                    <!--<button type="button" class="btnOff" id='make_contract'  onclick="location.href='CreatedContract.html'"></button>-->
+                    
+                </div>
+                <!--<div class="btnTop"><button type="button"><span class="skip">맨위로</span></button></div>-->
+            </div>
+            <!-- 유언장 : 표준 유언장 //-->
+        </div>
+    </div>
+    <!--// Footer -->
+</div>
+
+
+
+<!-- 저작권 표시
+        <div id="footer">
+    <address> &copy; <a href="http://company.jobkorea.co.kr" target="_blank">KoreaUniversity.</a> All rights reserved.</address>
+</div>
+-->
+
+<script>
+function saveToFile_Chrome(fileName, content) { //txt 파일로 생성 및 다운로드
+    var blob = new Blob([content], { type: 'text/plain' });
+    objURL = window.URL.createObjectURL(blob);
+            
+    // 이전에 생성된 메모리 해제
+    if (window.__Xr_objURL_forCreatingFile__) {
+        window.URL.revokeObjectURL(window.__Xr_objURL_forCreatingFile__);
+    }
+    window.__Xr_objURL_forCreatingFile__ = objURL;
+    var a = document.createElement('a');
+    a.download = fileName;
+    a.href = objURL;
+    a.click();
+}
+
+
+    var contractor = JSON.parse(localStorage.getItem("employee"));
+        $("#Name").val(contractor['name']);
+        $("#Address").val(contractor['address']);
+        $("#Phone").val(contractor['phone']);
+        $("#CompanyName").val(contractor['companyName']);
+
+        if(contractor['start_year'] && contractor['start_month'] && contractor['start_day'] != '')
+        { 
+            $("#ContractPeriod").val(contractor['start_year']+" 년 "+contractor['start_month']+" 월 "+contractor['start_day']+" 일 ~");
+            if(contractor['end_year'] && contractor['end_month'] && contractor['end_day'] != '')
+            {
+                $("#ContractPeriod").val(contractor['start_year']+" 년 "+contractor['start_month']+" 월 "+contractor['start_day']+" 일 ~ "+ contractor['end_year']+" 년 "+contractor['end_month']+" 월 "+contractor['end_day']+" 일 ");
+            }
+        }
+        else
+        {
+            $("#ContractPeriod").val('');
+        }
+
+        //$("#ContractPeriod").val(contractor['start_year']+"  년 "+contractor['start_month']+"  월 "+contractor['start_day']+" 일  ~  "+ contractor['end_year']+" 년 "+contractor['end_month']+" 월 "+contractor['end_day']+" 일 ");
+        $("#Work_place").val(contractor['work_place']);
+        $("#Work_content").val(contractor['work_content']);
+        $("#Work_Time").val(contractor['work_start_time']+ contractor['work_end_time']);
+        $("#Work_Day").val(contractor['work_day_num']);
+        $("#Holiday").val(contractor['holiday']);
+        $("#Pay_format").val(contractor['pay_format']);
+        $("#Pay_amount").val(contractor['pay_amount']);
+        $("#Bonus").val(contractor['bonus']);
+        $("#Etc_payCheck").val(contractor['etc_payCheck']);
+        $("#Pay_date").val(contractor['pay_date']);
+        $("#PayWay").val(contractor['payWay']);
+        $("#_4Insurance").val(contractor['_4insurance']);
+        document.getElementById('Write_year').value= contractor['writtenYear'];
+        document.getElementById('Write_month').value= contractor['writtenMonth'];
+        document.getElementById('Write_day').value= contractor['writtenDay'];
+        document.getElementById('signature').setAttribute('src',contractor['signDataURL']); //서명
+
+        $("#print_btn").on("click", function() {
+            //$('textarea').removeAttr('placeholder'); //textarea 요소의 placeholder 속성 제거
+            //document.getElementById('print_btn').style.visibility='hidden';
+            window.print()
+            //document.getElementById('print_btn').style.visibility='display';
+    });
+
+        $("#download_btn").on("click", function() {
+            var recardianData = JSON.stringify(contractor,null,3);
+            saveToFile_Chrome(contractor['name']+" 고객 장.txt",recardianData); // Chrome 환경에서, 오른쪽 인수의 내용을 txt 파일로 다운로드한다, download 폴더 경로로 저장된다.
+        });
+    
+
+</script>
+
+
+
+</html>
